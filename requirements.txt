@@ -1,0 +1,9 @@
+pandas
+interpret
+scikit-learn
+shap
+torch
+torchvision
+dice-ml
+numpy<=1.25
+imblearn
