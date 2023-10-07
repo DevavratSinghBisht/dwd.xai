@@ -2,6 +2,11 @@
 
 Code for explainable AI can be found in this repo.
 
+## Datasets
+
+* [Stroke](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
+* [Brain MRI](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)
+
 ## Citations
 ```
 @misc{deepfindr_xai,
