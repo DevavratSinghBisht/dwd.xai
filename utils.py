@@ -1,26 +1,3 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
-
-def load_process_split_dataset(path, seed):
-    data = pd.read_csv(path)
-
-    data.drop(["id"], axis=1, inplace=True)
-        
-    # Categorical
-    cat_cols = ["gender", "ever_married", "work_type", "Residence_type", "smoking_status"]
-    one_hot = pd.get_dummies(data[cat_cols],  prefix=cat_cols, dtype=float)
-
-    data = pd.concat([one_hot, data], axis=1)
-    data.drop(cat_cols, axis=1, inplace=True)
-
-        # Numerical
-    data.bmi = data.bmi.fillna(0)
-
-    X = data.iloc[:,:-1]
-    y = data.iloc[:,-1]
-    return train_test_split(X, y, test_size=0.20, random_state=seed)
-
-
 import pandas as pd 
 # Makes sure we see all columns
 pd.set_option('display.max_columns', None)
@@ -29,7 +6,6 @@ from imblearn.over_sampling import RandomOverSampler
 
 class DataLoader():
     def __init__(self, path="data/stroke.csv"):
-        self.data = None
         self.data = pd.read_csv(path)
 
     def preprocess_data(self):
