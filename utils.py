@@ -28,10 +28,8 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
 
 class DataLoader():
-    def __init__(self):
+    def __init__(self, path="data/stroke.csv"):
         self.data = None
-
-    def load_dataset(self, path="data/stroke.csv"):
         self.data = pd.read_csv(path)
 
     def preprocess_data(self):
